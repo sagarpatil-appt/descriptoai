@@ -1,0 +1,328 @@
+:root {
+  --neon-pink: #ff2a6d;
+  --neon-blue: #05d9e8;
+  --neon-purple: #d300c5;
+  --dark-bg: #0d0221;
+  --darker-bg: #070215;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-color);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.cyberpunk-container {
+  min-height: 100vh;
+  background: linear-gradient(45deg, var(--darker-bg), var(--dark-bg));
+  padding: 2rem;
+}
+
+.cyberpunk-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border-bottom: 2px solid var(--neon-pink);
+  box-shadow: 0 0 20px var(--neon-pink);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ai-logo {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.ai-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #4299e1, #667eea);
+  border-radius: 20px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 30px rgba(66, 153, 225, 0.3);
+  transition: all 0.3s ease;
+}
+
+.ai-logo::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: linear-gradient(135deg, #4299e1, #667eea);
+  border-radius: 18px;
+  transform: rotate(45deg);
+  opacity: 0.9;
+}
+
+.ai-text {
+  position: relative;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  letter-spacing: -2px;
+  transform: rotate(-45deg);
+  font-family: 'Inter', sans-serif;
+}
+
+.logo-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(51, 64, 89, 0.8);
+  padding: 1.5rem 2.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(66, 153, 225, 0.1);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover .ai-logo::before {
+  transform: rotate(225deg);
+  box-shadow: 0 0 40px rgba(66, 153, 225, 0.4);
+}
+
+.title-container {
+  text-align: left;
+  flex: 1;
+}
+
+.header h1 {
+  color: #e2e8f0;
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, #e2e8f0, #a0aec0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  color: #a0aec0;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-form-container {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 4rem;
+  position: relative;
+  padding: 2rem 0;
+}
+
+
+.header-content {
+  text-align: center;
+  position: relative;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.form-section {
+  background: rgba(26, 32, 44, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(66, 153, 225, 0.1);
+  height: fit-content;
+}
+
+.form-section h2 {
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(45, 55, 72, 0.5);
+  border: 1px solid rgba(74, 85, 104, 0.5);
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
+  background: rgba(45, 55, 72, 0.8);
+}
+
+.form-group input::placeholder {
+  color: #718096;
+}
+
+button {
+  background: linear-gradient(135deg, #4299e1, #667eea);
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea, #4299e1);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+button:hover::after {
+  opacity: 1;
+}
+
+button span {
+  position: relative;
+  z-index: 1;
+}
+
+.error {
+  color: #fc8181;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #fc8181;
+  border-radius: 8px;
+  background-color: rgba(252, 129, 129, 0.1);
+}
+
+.response-section {
+  background: rgba(26, 32, 44, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(66, 153, 225, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.response h3 {
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.response pre {
+  background-color: rgba(45, 55, 72, 0.5);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(74, 85, 104, 0.5);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Courier New', monospace;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .product-form-container {
+    padding: 1rem;
+  }
+  
+  .header {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .logo-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .title-container {
+    text-align: center;
+  }
+  
+  .ai-logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .ai-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .response-section {
+    position: static;
+  }
+} 
