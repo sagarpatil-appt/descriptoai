@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ProductForm.css';
 
@@ -17,6 +17,16 @@ const ProductForm = () => {
     });
   };
 
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => {
+        setError(null);
+      }, 2000); 
+
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
+
   const handleFeaturesChange = (e) => {
     const features = e.target.value.split(',').map(feature => feature.trim());
     setFormData({
@@ -31,7 +41,7 @@ const ProductForm = () => {
     setResponse(null);
 
     try {
-      const response = await axios.post('https://jsonplaceholder.typicode.com/posts', formData);
+      const response = await axios.post('https://web-production-7bad.up.railway.app/getResponse', formData);
       setResponse(response.data);
     } catch (err) {
       setError('Error submitting form: ' + err.message);
@@ -93,7 +103,7 @@ const ProductForm = () => {
             <div className="response">
               <h3>Short Description</h3>
               {response && ( <pre>
-                {JSON.stringify(response, null, 2)}
+                {JSON.stringify(response)}
          
                 </pre>   )}
             </div>
